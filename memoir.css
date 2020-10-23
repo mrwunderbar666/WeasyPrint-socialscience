@@ -1,0 +1,638 @@
+/*
+Theme Name: Memoir
+*/
+
+/* Serif Font: Source Serif  */
+/* @import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap'); */
+
+/* Sans Font: Source Sans Pro */
+/* @import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap'); */
+
+/* Mono Font: Source Code Pro */
+/* @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap'); */
+
+@font-face {
+    font-family: TexGyrePagella;
+    src: url("fonts/texgyrepagella-bolditalic.otf");
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: TexGyrePagella;
+    src: url("fonts/texgyrepagella-bold.otf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: TexGyrePagella;
+    src: url("fonts/texgyrepagella-italic.otf");
+    font-style: italic;
+}
+
+@font-face {
+    font-family: TexGyrePagella;
+    src: url("fonts/texgyrepagella-regular.otf");
+  }
+
+
+@page :first {
+    @top-left {
+        background: none;
+        content: '';
+        height: 1cm;
+        text-align: center;
+        width: 5cm;
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    @top-center {
+        background: none;
+        content: '';
+    }
+    @top-right {
+        background: none;
+        content: '';
+    }
+    @bottom-left {
+        height: 1.5cm;
+        width: 5cm;
+    }
+    @bottom-left img {
+        padding-left: .2cm;
+        padding-right: .2cm;
+        float: left;
+        margin-top: -.4cm;
+        width: 4.2cm
+    }
+    @bottom-center {
+        background: none;
+        content: '';
+    }
+    @bottom-right {
+        background: none;
+        content: '';
+    }
+    @bottom-right-corner {
+        background: none;
+        border-left: 1px solid #fff;
+        content: '';
+    }
+}
+
+@page {
+    font-family: TexGyrePagella, "Minion Pro", "Source Han Serif TC", "Source Han Serif K", "Source Han Serif SC";
+    size: A4;
+    /* width: 210mm;
+    height: 297mm; */
+    margin-left: 39mm;
+    margin-right: 49mm;
+    margin-top: 46mm;
+    margin-bottom: 29mm;
+   
+    @top-left {
+
+    }
+    @top-center {
+    }
+    @top-right {
+        background: none;
+        content: counter(page);
+        font-style: italic;
+        font-size: 11pt;
+        font-variant-numeric: oldstyle-nums;
+        }
+    @bottom-left {
+        background: none;
+        content: none;
+    }
+    @bottom-right {
+
+    }
+    @bottom-right-corner {
+    }
+}
+
+@page :blank {
+    size: A4;
+    @top-left {
+    }
+    @top-center {
+        content: none;
+    }
+    @top-right {
+        content: none;
+    }
+    @bottom-right {
+        background: none;
+        content: '';
+    }
+    @bottom-right-corner {
+    }
+}
+
+@page no-chapter {
+    size: A4;
+    border-left-style: none;
+    @top-left {
+        padding-left: .5cm; */
+    }
+    @top-center {
+        content: none;
+    }
+    @top-right {
+        content: none;
+    }
+    @bottom-left {
+        background: none;
+        content: none;
+        z-index: -1;
+    }
+    @bottom-center {
+        content: none;
+        z-index: -1;
+    }
+    @bottom-right {
+    }
+}
+
+/* Page Size */
+
+/* html {
+    width: 210mm;
+    height: 297mm;
+} */
+
+
+body {
+    /* Default text settings */
+    font-family: TexGyrePagella, "Minion Pro", "Source Han Serif TC", "Source Han Serif K", "Source Han Serif SC";
+    color: black;
+    font-size: 11pt;
+    text-align: left;
+    font-variant-numeric: oldstyle-nums;
+}
+
+header {
+    margin-top: 75mm;
+}
+
+h1,h2,h3, p, li {
+    margin-bottom: 0em; 
+    margin-top: 0em
+}
+
+p {
+    text-align: justify;
+    hyphens: auto;
+    line-height: 13.75pt;
+}
+
+
+/* Space before new section starts */
+
+p + h2,
+p + h3,
+p + h4,
+p + h5,
+p + h6 {
+    padding-top: 22pt;
+}
+
+/* correct size for superscript */
+
+sup {
+    font-size: 8pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: left;
+    hyphens: none;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 24pt;
+    padding-bottom: 44pt;   /* 4 times default font size */
+    padding-top: 55pt;      /* 5 times default font size */
+    counter-reset: h2counter;
+    page-break-before: always;
+}
+
+h2 {
+    font-size: 14pt;
+    font-weight: normal;
+    font-variant-caps: all-small-caps;
+    text-transform: lowercase;
+    padding-bottom: 6pt;
+    letter-spacing: 0.6pt;
+    counter-reset: h3counter;
+}
+
+h3 {
+    font-size: 11pt;
+    font-style: italic;
+    font-weight: normal;
+    padding-bottom: 6pt;
+    counter-reset: h4counter;
+}
+
+
+h4 {
+    font-size: 10pt;
+    font-weight: bold;
+    display: inline-block;
+    padding-right: 1em;
+    margin-bottom: 0pt;
+}
+
+/* First paragraph in section without indentation */
+
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+    text-indent: 0pt  !important;
+}
+
+h4 + p {
+    display: inline;
+}
+
+main p {
+    text-indent: 22pt;
+}
+
+/* Numbered sections */
+
+main {
+    counter-reset: h1counter;
+}
+
+.unnumbered:before {
+    content: "" !important;
+    counter-increment: none;
+}
+
+
+main h1:before {
+    content: counter(h1counter,decimal) " ";
+    counter-increment: h1counter;
+}
+
+
+main h2:before {
+    content: counter(h1counter,decimal) "." counter(h2counter,decimal) " ";
+    counter-increment: h2counter;
+    padding-right: 1em;
+}
+
+
+main h2:before {
+    content: counter(h1counter,decimal) "." counter(h2counter,decimal) " ";
+    counter-increment: h2counter;
+    padding-right: 1em;
+
+}
+
+
+main h3:before {
+    content: counter(h1counter,decimal) "." counter(h2counter,decimal) "." counter(h3counter,decimal) " ";
+    counter-increment: h3counter;
+    padding-right: 1em;
+
+}
+
+/* Title Page stuff */
+
+header h1.title {
+    font-weight: bold;
+    font-size: 18pt;
+    padding-top: 0pt;
+    padding-bottom: 0pt;
+    page-break-before: avoid;
+
+}
+
+h2.documenttype {
+    font-weight: bold;
+    text-transform: lowercase;
+    font-variant: small-caps;
+    letter-spacing: 0.7pt;
+    font-size: 10pt;
+}
+
+h2.subtitle {
+    font-weight: bold;
+    text-transform: lowercase;
+    font-variant: small-caps;
+}
+
+p.author {
+    padding-top: 44pt;
+}
+
+p.email {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: "Source Code Pro";
+    font-size: 9pt;
+}
+
+p.email a {
+    color: #000;
+}
+
+p.date {
+    margin-top: 22pt;
+    margin-bottom: 22pt;
+}
+
+/* Table of contents */
+
+nav h1 {
+    padding-bottom: 22pt;
+}
+
+nav {
+    string-set: heading content();
+    page: no-chapter;
+    page-break-after: always;
+}
+
+nav ul {
+    margin-top: 0;
+    list-style-type: none;
+    padding-left: 2em;
+}
+
+nav ul li {
+    /* width: 100%; */
+}
+
+nav ul li a {
+    /* overflow: hidden; */
+}
+
+
+nav ul li a::after {
+    content: target-counter(attr(href url), page, decimal);
+    /* content: "1"; */
+    float: right;
+    margin-right: 10px;
+}
+
+nav ul li ul {
+    list-style-type: none;
+}
+
+nav code {
+    background: none;
+}
+
+nav a {
+    text-decoration: none;
+    outline: none;
+    color: #000;
+}
+
+
+/* Bibliography */
+
+.hanging-indent {
+    text-indent: -25pt;
+    padding-left: 25pt;
+    text-align: justify;
+}
+
+.csl-entry {
+    padding-bottom: 6pt;
+}
+
+/* Make links and DOIs smaller and in monospace (reduce ambiguity) */
+
+.csl-entry a:link {
+    font-family: "Source Code Pro";
+    font-size: 9pt;
+}
+
+figure {
+    max-width: 50%;
+    float: right;
+}
+
+figure img {
+    vertical-align: top;
+    max-width: 100%;
+    max-height: 9cm;
+    float: right
+}
+
+figure figcaption {
+    text-align: center;
+}
+
+li img {
+    /*    vertical-align: top;*/
+    max-width: 75%;
+    /*max-height:9cm;*/
+    border-radius: 10px;
+    display: block;
+}
+
+
+a:link {
+    outline: none;
+    color: rgb(0,111,184);
+    font-weight: normal;
+    text-decoration: none;
+}
+
+pre {
+    font-family: "Source Code Pro";
+    font-size: 10pt;
+    margin-left: .5cm;
+    padding: 2px;
+    white-space: pre-wrap;
+    word-wrap: normal;
+}
+
+code {
+    font-family: "Source Code Pro";
+    padding: 2px;
+    font-size: 9pt;
+}
+
+
+pre.sourceCode {
+    color: initial;
+}
+
+/* ------------------- Lists --------------------------*/
+
+/* Top level is normal, next level is just bullets, no numbers */
+
+ul li {
+    margin-left: -.25cm;
+    font-weight: normal;
+    margin-top: .2cm;
+}
+
+ul li ul {
+    list-style-type: disc;
+}
+
+ul li ul li {
+    margin-left: -.25cm;
+}
+
+ul li ul li ul {
+    list-style-type: none;
+}
+
+/* Top level is bold, next level is just bullets, no numbers */
+
+.b ul li {
+    margin-left: -.25cm;
+    font-weight: bold;
+    margin-top: .2cm;
+}
+
+.b ul li ul {
+    list-style-type: disc;
+}
+
+.b ul li ul li {
+    margin-left: -.25cm;
+}
+
+.b ul li ul li ul {
+    list-style-type: none;
+}
+
+/* Top level is bold, next level is numbered */
+
+.bwn ul li {
+    margin-left: -.25cm;
+    font-weight: bold;
+    margin-top: .2cm;
+}
+
+.bwn ul li ul {
+    list-style-type: decimal;
+}
+
+.bwn ul li ul li {
+    margin-left: -.25cm;
+}
+
+.bwn ul li ul li ul {
+    list-style-type: none;
+}
+
+/* Top level is bold numbers, next level is regular bullets */
+
+.bn ul {
+    list-style-type: decimal;
+}
+
+.bn ul li {
+    margin-left: -.25cm;
+    font-weight: bold;
+    margin-top: .2cm;
+}
+
+.bn ul li ul {
+    list-style-type: disc;
+}
+
+.bn ul li ul li {
+    margin-left: -.25cm;
+}
+
+.bn ul li ul li ul {
+    list-style-type: none;
+}
+
+h1 {
+    string-set: title content();
+}
+
+
+h1 code {
+    background: none;
+}
+
+h2 code {
+    background: none;
+}
+
+h3 code {
+    background: none;
+}
+
+h4 code {
+    background: none;
+}
+
+h5 code {
+    background: none;
+}
+
+h6 code {
+    background: none;
+}
+
+/* Attempt to make something like booktabs (ctan package) */
+
+table {
+     /* so far the safest way for tables to be rendered in one piece */
+    page-break-before: always;
+    border-collapse: collapse;
+    width: 100%;
+    border-top-color: black;
+    border-bottom-color: black;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-width: 1pt;
+    font-size: 9pt;
+    margin-bottom: 11pt;
+}
+
+table caption {
+    padding-bottom: 6pt;
+}
+
+table caption:before {
+    content: "Table " counter(tablecounter,decimal) ": ";
+    counter-increment: tablecounter;
+    font-weight: bold;
+    text-align: center;
+}
+
+th {
+    border: none;
+    padding: 6pt;
+    border-bottom-color: black;
+    border-bottom-style: solid;
+    border-width: 0.5pt;
+    font-weight: normal;
+    font-style: italic;
+}
+
+td {
+    padding: 6pt;
+}
+  
+
+blockquote {
+    padding: 2mm;
+    margin-left: 11pt;
+}
+
+.pb {
+    page-break-before: always;
+}
